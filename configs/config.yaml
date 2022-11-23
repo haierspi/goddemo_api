@@ -1,0 +1,84 @@
+Server:
+  RunMode: debug
+  HttpPort: 8000
+  ReadTimeout: 60
+  WriteTimeout: 60
+  PrivateHttpListen: 8001  #私有端口用于监听
+  OpenServiceListen: 8002  #私有端口用于监听
+  DefaultAccessHost: http://127.0.0.1:8002  #默认的接口访问方式  用户c.get('access_host') 获取用户访问的
+  SignExpiry: 3600  # 签名过期
+App:
+  DefaultPageSize: 10
+  MaxPageSize: 100
+  DefaultContextTimeout: 60
+  LogSavePath: storage/logs
+  LogFileName: app
+  LogFileExt: .log
+  UploadSavePath: storage/uploads
+  UploadServerUrl: http://127.0.0.1:8000/static
+  UploadImageMaxSize: 5  # MB
+  UploadImageAllowExts:
+    - .jpg
+    - .jpeg
+    - .png
+Email:
+  Host: smtp.qq.com
+  Port: 465
+  UserName: xxx
+  Password: xxx
+  IsSSL: true
+  From: xxx
+  To:
+    - xxx
+Security:
+  TokenAuthKey: key
+  EnableHtmlEncrypt: true
+  HtmlEncryptKey: key
+JWT:
+  Secret: 666
+  Issuer: service
+  Expire: 7200
+Database:
+  DBType: mysql
+  UserName: 
+  Password: 
+  Host: 
+  DBName: 
+  TablePrefix: pre_
+  Charset: utf8
+  ParseTime: True
+  MaxIdleConns: 10
+  MaxOpenConns: 30
+Redis:
+  Host: 127.0.0.1:6379
+  Password: 
+  Db: 0
+WechatJSAPIPay:
+  Appid: 
+  Mchid: 
+  MchCertificateSerial: 
+  MchPrivateKeyFilePath: 
+  PlatformCertificateFilePath: 
+  Apiv3Key: 
+WechatH5Pay:
+  Appid: 
+  Mchid: 
+  MchCertificateSerial: 
+  MchPrivateKeyFilePath: 
+  PlatformCertificateFilePath: 
+  Apiv3Key: 
+AlipayH5Pay:
+  Appid: 
+  PrivateKey: 
+  AliPublicKey: 
+  IsProd: true
+  SecretKey:
+RabbitMQ:
+  Dsn : amqp://:5672/
+
+OSS:
+  BucketName: 
+  AccessURLDomain: https://.com/
+  Endpoint: 
+  AccessKeyID: 
+  AccessKeySecret :
